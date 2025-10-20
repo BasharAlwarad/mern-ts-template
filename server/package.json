@@ -1,0 +1,46 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "MERN TypeScript Express Server",
+  "main": "dist/index.js",
+  "type": "module",
+  "imports": {
+    "#controllers": "./src/controllers/index.ts",
+    "#db": "./src/db/index.ts",
+    "#middlewares": "./src/middlewares/index.ts",
+    "#models": "./src/models/index.ts",
+    "#routes": "./src/routes/index.ts",
+    "#schemas": "./src/schemas/index.ts",
+    "#utils": "./src/utils/index.ts",
+    "#types": "./src/types/index.ts"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon --watch src --ext ts --exec \"tsx --env-file=.env.development.local ./src/index.ts\"",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "express",
+    "typescript",
+    "mern"
+  ],
+  "author": "Bashar AlWarad",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongoose": "^8.19.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.8.1",
+    "cross-env": "^10.1.0",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
